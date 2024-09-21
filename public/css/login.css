@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Sarabun", sans-serif;
+}
+html , body{
+    scroll-behavior: smooth;
+    background-image: url(../pic/background.png);
+}
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    width: 350px;
+    height: 350px;
+    background-color: rgba(255, 255, 255, 0.007);
+    border-radius: 10px;
+    filter: blur(.5px);
+    box-shadow: 0px 0px 1px 1px #000d1b67;
+    animation: showlogin ease-out .4s forwards;
+}
+.logo-login{
+    width: 100%;
+    display: flex;
+    height: 100px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.logo-login i{
+    font-size: 40px;
+    color: #385779;
+}
+.logo-login h3{
+    font-size: 24px;
+    color: #385779;
+}
+.form-login{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px;
+}
+.form-login input{
+    height: 35px;
+    border: 1px solid #000d1b;
+    color: #ffffff;
+    outline: none;
+    margin: 10px 0px;
+    padding-left: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all .4s;
+    background-color: #000d1b;
+}
+.form-login input[type='submit']:hover{
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #000d1b;
+}
+.form-login a{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #ffffff;
+}
+.form-login a:hover{
+    text-decoration: underline;
+    color: purple;
+}
+
+@keyframes showlogin {
+    from{
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to{
+        opacity: 1;
+    }
+}
