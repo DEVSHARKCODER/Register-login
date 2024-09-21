@@ -9,7 +9,7 @@ formregister.addEventListener('submit', function(e) {
         data[key] = value;
     });
 
-    // ตรวจสอบรหัสผ่านกับการยืนยันรหัสผ่าน
+   
     if (data.password !== data.confirm_password) {
         Swal.fire({
             title: 'ข้อผิดพลาด!',
@@ -20,7 +20,7 @@ formregister.addEventListener('submit', function(e) {
         return; 
     }
 
-    // ส่งข้อมูลไปที่เซิร์ฟเวอร์
+    
     fetch('/register', {
         method: 'POST',
         headers: {
@@ -30,7 +30,7 @@ formregister.addEventListener('submit', function(e) {
     })
     .then(response => response.json())
     .then(data => {
-        // เช็คสถานะการตอบกลับจากเซิร์ฟเวอร์
+        
         if (data.message === 'username หรือ email นี้มีอยู่แล้ว') {
             Swal.fire({
                 title: 'ข้อผิดพลาด!',

@@ -9,7 +9,7 @@ router.get('/login', (req, res) => {
 router.post('/login', async (req, res) => {
     const { username, password } = req.body;
 
-    // ตรวจสอบว่ามีการกรอก username และ password หรือไม่
+   
     if (!username || !password) {
         return res.status(400).json({ message: 'กรุณากรอก User และ Password' });
     }
