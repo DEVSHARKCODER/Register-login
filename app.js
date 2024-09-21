@@ -59,6 +59,18 @@ app.post('/logout', (req, res) => {
         res.json({ message: 'Logout Success' });
     });
 });
+
+app.use((req, res) => {
+    const filePath = path.resolve(__dirname, 'public', 'html', 'error404.html');
+    console.log('Sending file:', filePath); // Debugging line
+    res.status(404).sendFile(filePath, (err) => {
+        if (err) {
+            console.error('ไม่สามารถส่งไฟล์ได้:', err);
+            res.status(err.status).end();
+        }
+    });
+});
+
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 });
